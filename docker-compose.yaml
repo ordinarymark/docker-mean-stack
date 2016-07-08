@@ -1,0 +1,15 @@
+version: '2'
+services:
+  docker-mean-stack:
+    user: "100000"
+    hostname: mean_stack
+    container_name: mean_stack
+    build: .
+    image: docker-mean-stack
+    ports:
+      - "8080:8080"
+      - "27017:27017"
+      - "27018:27018"
+    environment:
+      SUPERVISORD_LOGLEVEL: debug
+      # plus and env variables needed
